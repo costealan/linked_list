@@ -15,6 +15,10 @@ class LinkedList
   end
 
   def prepend(value)
+    old_head = @head
+    node = Node.new(value, old_head)
+    @head = node
+    puts "new head #{head} #{node.value} node #{node}, next value #{node.next} old #{old_head}"
   end
 
   def find(node)
@@ -37,3 +41,4 @@ linked_list = LinkedList.new()
 linked_list.append(1)
 linked_list.append(2)
 linked_list.append(3)
+linked_list.prepend(4)
