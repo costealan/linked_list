@@ -9,7 +9,7 @@ class LinkedList
     if head == nil
       @head = node
     else
-      last_node = find(head)
+      last_node = find_last(head)
       last_node.next = node
     end  
   end
@@ -18,14 +18,23 @@ class LinkedList
     old_head = @head
     node = Node.new(value, old_head)
     @head = node
-    puts "new head #{head} #{node.value} node #{node}, next value #{node.next} old #{old_head}"
   end
 
-  def find(node)
+  def size
+    i = 1
+    current = @head
+    while current.next != nil
+      i += 1
+      current = current.next
+    end
+    i 
+  end
+
+  def find_last(node)
     if node.next == nil
       return node
     end
-    find(node.next)
+    find_last(node.next)
   end
 end
 
@@ -42,3 +51,4 @@ linked_list.append(1)
 linked_list.append(2)
 linked_list.append(3)
 linked_list.prepend(4)
+puts linked_list.size()
