@@ -5,12 +5,14 @@ class LinkedList
   end
 
   def append(value)
+    node = Node.new(value, nil)
     if head == nil
-      node = Node.new(value, nil)
       @head = node
       puts "add value #{value} as the head node"
     else
-      # code for adding new nodes beside head
+      # find node with nil as next
+      # if next == nil return
+      # find_node(node.next_node)
     end  
   end
 end
@@ -18,7 +20,7 @@ end
 class Node
   def initialize(value, next_node)
     @value = value
-    @next_node = next_node
+    @next = next_node
   end
 end
 
