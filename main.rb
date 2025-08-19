@@ -1,5 +1,4 @@
 class LinkedList
-  attr_accessor :head
   def initialize
     @head = nil
   end
@@ -30,6 +29,10 @@ class LinkedList
     i 
   end
 
+  def head
+    return @head
+  end
+
   def find_last(node)
     if node.next == nil
       return node
@@ -51,4 +54,5 @@ linked_list.append(1)
 linked_list.append(2)
 linked_list.append(3)
 linked_list.prepend(4)
-puts linked_list.size()
+puts linked_list.size
+puts linked_list.head
