@@ -14,6 +14,9 @@ class LinkedList
     end  
   end
 
+  def prepend(value)
+  end
+
   def find(node)
     if node.next == nil
       return node
