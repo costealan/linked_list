@@ -57,7 +57,7 @@ class LinkedList
 
   def contains?(value)
     current = @head
-    until current.next == nil
+    until current == nil
       if current.value == value
         return true
       else
@@ -68,8 +68,13 @@ class LinkedList
   end
 
   def find(value)
+    i = 0
     current = @head
-    until current.next == nil
+    until current == nil
+      if current.value == value
+        return i
+      end
+      i += 1
       current = current.next
     end
     nil
@@ -105,5 +110,5 @@ linked_list.prepend(4)
 # puts "at index 3 is #{linked_list.at(3)} #{linked_list.at(3).value}" 
 # p linked_list.pop
 # puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
-# p linked_list.contains?(6)
+# p 'contains?',linked_list.contains?(5)
 p linked_list.find(4)
