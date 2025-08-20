@@ -56,9 +56,15 @@ class LinkedList
   end
 
   def contains?(value)
-    last_node = tail
     current = @head
-  
+    until current.next == nil
+      if current.value == value
+        return true
+      else
+        current = current.next
+      end
+    end
+    false
   end
 
   def find_last(node = @head)
@@ -89,6 +95,6 @@ linked_list.prepend(4)
 # puts "at index 1 is #{linked_list.at(1)} #{linked_list.at(1).value}" 
 # puts "at index 2 is #{linked_list.at(2)} #{linked_list.at(2).value}" 
 # puts "at index 3 is #{linked_list.at(3)} #{linked_list.at(3).value}" 
-p linked_list.pop
-puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
-
+# p linked_list.pop
+# puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
+p linked_list.contains?(6)
