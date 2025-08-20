@@ -67,6 +67,14 @@ class LinkedList
     false
   end
 
+  def find(value)
+    current = @head
+    until current.next == nil
+      current = current.next
+    end
+    nil
+  end
+
   def find_last(node = @head)
     if node.next == nil
       return node
@@ -97,4 +105,5 @@ linked_list.prepend(4)
 # puts "at index 3 is #{linked_list.at(3)} #{linked_list.at(3).value}" 
 # p linked_list.pop
 # puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
-p linked_list.contains?(6)
+# p linked_list.contains?(6)
+p linked_list.find(4)
