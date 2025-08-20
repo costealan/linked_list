@@ -8,7 +8,7 @@ class LinkedList
     if head == nil
       @head = node
     else
-      last_node = find_last(head)
+      last_node = find_last
       last_node.next = node
     end  
   end
@@ -33,7 +33,11 @@ class LinkedList
     return @head
   end
 
-  def find_last(node)
+  def tail
+
+  end
+
+  def find_last(node = @head)
     if node.next == nil
       return node
     end
@@ -54,5 +58,5 @@ linked_list.append(1)
 linked_list.append(2)
 linked_list.append(3)
 linked_list.prepend(4)
-puts linked_list.size
+linked_list.size
 puts linked_list.head
