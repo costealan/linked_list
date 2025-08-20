@@ -106,11 +106,24 @@ class Node
   end
 end
 
-linked_list = LinkedList.new
-linked_list.append(1)
-linked_list.append(2)
-linked_list.append(3)
-linked_list.prepend(4)
+
+
+list = LinkedList.new
+
+list.append('dog')
+list.append('cat')
+list.append('parrot')
+list.append('hamster')
+list.append('snake')
+list.append('turtle')
+
+puts list
+
+# linked_list = LinkedList.new
+# linked_list.append(1)
+# linked_list.append(2)
+# linked_list.append(3)
+# linked_list.prepend(4)
 # linked_list.size
 # puts "head is #{linked_list.head} #{linked_list.head.value}"
 # puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
@@ -122,4 +135,4 @@ linked_list.prepend(4)
 # puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
 # p 'contains?',linked_list.contains?(5)
 # p linked_list.find(4)
-puts linked_list
+#puts linked_list
