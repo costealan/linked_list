@@ -37,6 +37,9 @@ class LinkedList
     find_last
   end
 
+  def at(index)
+  end
+
   def find_last(node = @head)
     if node.next == nil
       return node
