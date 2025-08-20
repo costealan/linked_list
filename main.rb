@@ -34,7 +34,7 @@ class LinkedList
   end
 
   def tail
-
+    find_last
   end
 
   def find_last(node = @head)
@@ -59,4 +59,5 @@ linked_list.append(2)
 linked_list.append(3)
 linked_list.prepend(4)
 linked_list.size
-puts linked_list.head
+puts "head is #{linked_list.head} #{linked_list.head.value}"
+puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
