@@ -46,14 +46,19 @@ class LinkedList
   end
 
   def pop
-    # find the node that next is the same as the tail
     last_node = tail
     current = @head
-    while current.next != tail 
+    while current.next != last_node 
       current = current.next
     end
     current.next = nil
     last_node
+  end
+
+  def contains?(value)
+    last_node = tail
+    current = @head
+  
   end
 
   def find_last(node = @head)
@@ -77,7 +82,7 @@ linked_list.append(1)
 linked_list.append(2)
 linked_list.append(3)
 linked_list.prepend(4)
-linked_list.size
+# linked_list.size
 # puts "head is #{linked_list.head} #{linked_list.head.value}"
 # puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
 # puts "at index 0 is #{linked_list.at(0)} #{linked_list.at(0).value}" 
@@ -86,3 +91,4 @@ linked_list.size
 # puts "at index 3 is #{linked_list.at(3)} #{linked_list.at(3).value}" 
 p linked_list.pop
 puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
+
