@@ -112,6 +112,29 @@ class LinkedList
       new_node.next = old
   end
 
+  def remove_at(index)
+    current = @head
+    if index == 0 && current.next != nil
+      @head = current.next
+      return
+    elsif index == 0 && current.next == nil
+      @head = nil
+      return 
+    end
+    i = 0
+    previous = nil
+    while i <= index
+      if i == index - 1
+        previous = current
+      elsif i == index
+        previous.next = current.next
+        current.next = nil
+      end
+      current = current.next
+      i += 1
+    end
+  end
+
   def find_last(node = @head)
     if node.next == nil
       return node
@@ -133,11 +156,12 @@ end
 list = LinkedList.new
 
 list.append('dog')
-list.append('cat')
-list.append('parrot')
-list.append('hamster')
-list.append('snake')
-list.append('turtle')
-list.insert_at('orca', 3)
-list.insert_at('dolphin', 3)
+# list.append('cat')
+# list.append('parrot')
+# list.append('hamster')
+# list.append('snake')
+# list.append('turtle')
+# list.insert_at('orca', 3)
+# list.insert_at('dolphin', 3)
+list.remove_at(0)
 puts list
