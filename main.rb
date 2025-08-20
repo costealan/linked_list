@@ -15,8 +15,7 @@ class LinkedList
 
   def prepend(value)
     old_head = @head
-    node = Node.new(value, old_head)
-    @head = node
+    @head = Node.new(value, old_head)
   end
 
   def size
@@ -38,6 +37,12 @@ class LinkedList
   end
 
   def at(index)
+    current = @head
+    while index >= 1
+      current = current.next
+      index -= 1
+    end
+    current
   end
 
   def find_last(node = @head)
@@ -56,11 +61,15 @@ class Node
   end
 end
 
-linked_list = LinkedList.new()
+linked_list = LinkedList.new
 linked_list.append(1)
 linked_list.append(2)
 linked_list.append(3)
 linked_list.prepend(4)
 linked_list.size
-puts "head is #{linked_list.head} #{linked_list.head.value}"
-puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
+# puts "head is #{linked_list.head} #{linked_list.head.value}"
+# puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
+puts "at index 0 is #{linked_list.at(0)} #{linked_list.at(0).value}" 
+puts "at index 1 is #{linked_list.at(1)} #{linked_list.at(1).value}" 
+puts "at index 2 is #{linked_list.at(2)} #{linked_list.at(2).value}" 
+puts "at index 3 is #{linked_list.at(3)} #{linked_list.at(3).value}" 
