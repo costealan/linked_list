@@ -80,6 +80,16 @@ class LinkedList
     nil
   end
 
+  def to_s
+    current = @head
+    string = ''
+    until current == nil
+      string << "( #{current.value} ) -> "
+      current = current.next
+    end
+    string << "nil"
+  end
+
   def find_last(node = @head)
     if node.next == nil
       return node
@@ -111,4 +121,5 @@ linked_list.prepend(4)
 # p linked_list.pop
 # puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
 # p 'contains?',linked_list.contains?(5)
-p linked_list.find(4)
+# p linked_list.find(4)
+puts linked_list
