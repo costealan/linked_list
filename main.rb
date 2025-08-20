@@ -90,6 +90,28 @@ class LinkedList
     string << "nil"
   end
 
+  def insert_at(value, index)
+    if index == 0
+      prepend(value)
+    end
+      new_node = Node.new(value, nil)
+      previous = nil
+      old = nil
+      current = @head
+      i = 0
+      while i <= index
+        if i == index - 1
+          previous = current
+        elsif i == index
+          old = current
+        end
+        current = current.next
+        i += 1
+      end
+      previous.next = new_node
+      new_node.next = old
+  end
+
   def find_last(node = @head)
     if node.next == nil
       return node
@@ -116,23 +138,6 @@ list.append('parrot')
 list.append('hamster')
 list.append('snake')
 list.append('turtle')
-
+list.insert_at('orca', 3)
+list.insert_at('dolphin', 3)
 puts list
-
-# linked_list = LinkedList.new
-# linked_list.append(1)
-# linked_list.append(2)
-# linked_list.append(3)
-# linked_list.prepend(4)
-# linked_list.size
-# puts "head is #{linked_list.head} #{linked_list.head.value}"
-# puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
-# puts "at index 0 is #{linked_list.at(0)} #{linked_list.at(0).value}" 
-# puts "at index 1 is #{linked_list.at(1)} #{linked_list.at(1).value}" 
-# puts "at index 2 is #{linked_list.at(2)} #{linked_list.at(2).value}" 
-# puts "at index 3 is #{linked_list.at(3)} #{linked_list.at(3).value}" 
-# p linked_list.pop
-# puts "tail is #{linked_list.tail} #{linked_list.tail.value}"
-# p 'contains?',linked_list.contains?(5)
-# p linked_list.find(4)
-#puts linked_list
